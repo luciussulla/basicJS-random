@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 40px; 
+            height: 28px; 
+            background-color: transparent;
+            font-family: arial;
+            padding: 8px 4px; 
+            border: 1px solid black; 
+        }
+        .msg {
+            width: 300px; 
+            height: 150px; 
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg"></div>
+    <button class="btn">Click</button>
+    <script>
+        const msg = document.querySelector('.msg')
+        const btn = document.querySelector('.btn')
+        btn.addEventListener('click', generateCode) 
+        const signs = ["A", "B", "C", "D", "1", "2", "3"]
+        let newCodes = []
+        let j = 0
+        let i = 0
+        let newCode = ""
+        function generateCode() {
+           newCodes=[]
+           newCode=""
+           for(let j=0;j<10;j++) {
+            newCode=""
+            for (let i=0; i<5; i++) {
+                newCode = newCode+signs[Math.floor(Math.random()*signs.length)]
+            }
+            console.log(newCode)
+            newCodes.push(newCode)
+            console.log(newCodes)
+            msg.innerHTML += "<p>"+newCode+"</p>"
+           }   
+        }
+        // console.log(newCodes)
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 40px; 
+            height: 28px; 
+            background-color: transparent;
+            font-family: arial;
+            padding: 8px 4px; 
+            border: 1px solid black; 
+        }
+        .msg {
+            width: 300px; 
+            height: 150px; 
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg"></div>
+    <button class="btn">Click</button>
+    <script>
+        const msg = document.querySelector('.msg')
+        const btn = document.querySelector('.btn')
+        btn.addEventListener('click', showRandom) 
+        const names = ["ala", "ola", "bola"]
+        function showRandom() {
+            const rand = Math.floor(Math.random()*names.length)
+            console.log(rand)
+            msg.innerText = names[rand]
+        }
+    </script>
+</body>
+</html>
